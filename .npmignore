@@ -1,2 +1,11 @@
-example
-.babelrc
+typings/
+.idea/
+.arcconfig
+
+.vscode/
+buck-out/
+
+.watchmanconfig
+.buckconfig
+
+/examples
