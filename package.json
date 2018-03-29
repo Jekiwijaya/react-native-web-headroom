@@ -1,0 +1,34 @@
+{
+  "name": "react-native-web-headroom",
+  "version": "1.0.0",
+  "description": "React Native Web Headroom",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jekiwijaya/react-native-web-headroom.git"
+  },
+  "keywords": [
+    "react-native-web",
+    "headroom",
+    "react",
+    "react-native"
+  ],
+  "author": "Jacky Wijaya <jekiwijaya@hotmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jekiwijaya/react-native-web-headroom/issues"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "homepage": "https://github.com/Jekiwijaya/react-native-web-headroom#readme",
+  "devDependencies": {
+    "babel-preset-react-native": "^4.0.0",
+    "react": "^16.2.0",
+    "react-native": "^0.54.4"
+  }
+}

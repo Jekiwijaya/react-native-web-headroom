@@ -1,0 +1,27 @@
+{
+  "name": "headroom",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "babel-preset-react-native-stage-0": "^1.0.1",
+    "jest": "^22.4.3",
+    "jest-react-native": "^18.0.0",
+    "react-test-renderer": "16.2.0"
+  },
+  "scripts": {
+    "start": "react-native start",
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "test": "jest"
+  },
+  "jest": {
+    "preset": "react-native"
+  },
+  "dependencies": {
+    "create-subscription": "0.0.0",
+    "faker": "^4.1.0",
+    "react": "16.2.0",
+    "react-native": "0.52.0",
+    "react-native-web-headroom": "file:../../"
+  }
+}
