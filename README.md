@@ -35,9 +35,13 @@ export default class App extends React.Component {
           >
             {...}
           </ScrollableComponent>
-          <Head>
-            <Header />
-          </Head>
+          <HeadContainer>
+            <Header backgroundColor="red" zIndex={10}/>
+            <HeadComponent>
+              <Header backgroundColor="green"/>
+            </HeadComponent>
+            <Header backgroundColor="yellow" />
+          </HeadContainer>
         </HeadroomProvider>
       </View>
     );
