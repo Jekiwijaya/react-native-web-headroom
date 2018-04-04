@@ -2,6 +2,8 @@
 
 Handling component that hide when scroll down, and showup when scroll up.
 
+![Headroom demo](demo/react-native-headroom.gif)
+
 ## Instalation
 ````bash
 npm install react-native-web-headroom --save
@@ -45,11 +47,11 @@ export default class App extends React.Component {
 
 ## API
 
+### HeadroomContainer
+todo
+
+### HeadroomComponent
+todo
+
 ### HeadroomProvider
-todo
-
-### ScrollableComponent
-todo
-
-### Head
 todo

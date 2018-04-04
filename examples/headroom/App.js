@@ -3,7 +3,7 @@ import { ScrollView, StyleSheet, Text, View, StatusBar } from 'react-native';
 
 import Header from './components/Header';
 
-import {Head, ScrollableComponent, HeadroomProvider} from 'react-native-web-headroom';
+import {HeadContainer, HeadComponent, ScrollableComponent, HeadroomProvider} from 'react-native-web-headroom';
 
 export default class App extends React.Component {
 
@@ -20,9 +20,18 @@ export default class App extends React.Component {
               <View key={idx}><Text>{idx}</Text></View>
             ))}
           </ScrollableComponent>
-          <Head>
-            <Header />
-          </Head>
+          <HeadContainer>
+            <Header backgroundColor="red" zIndex={10}/>
+            <HeadComponent type="top">
+              <Header backgroundColor="green"/>
+            </HeadComponent>
+            <Header backgroundColor="yellow" />
+          </HeadContainer>
+          <View style={{position: 'absolute', left: 0, right: 0, bottom: 0, backgroundColor: 'red'}}>
+            <HeadComponent type="bottom">
+              <Header backgroundColor="green"/>
+            </HeadComponent>
+          </View>
         </HeadroomProvider>
       </View>
     );

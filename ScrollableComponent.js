@@ -41,11 +41,17 @@ export default class ScrollableComponent extends Component {
   };
 
   render() {
-    const { component: Comp, contentContainerStyle = {}, onScroll, ...rest } = this.props;
+    const {
+      component: Comp,
+      contentContainerStyle = {},
+      onScroll,
+      ...rest
+    } = this.props;
     return (
       <Comp
         contentContainerStyle={this.addHeadHeight(contentContainerStyle)}
         onScroll={this.handleOnScroll}
+        scrollEventThrottle={16}
         {...rest}
       />
     );
