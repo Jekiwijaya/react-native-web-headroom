@@ -1,3 +1,5 @@
+/* eslint-disable no-underscore-dangle */
+
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
@@ -12,12 +14,12 @@ export default class HeadComponent extends PureComponent {
   static contextTypes = {
     headroom: PropTypes.any.isRequired,
 
-    type: PropTypes.oneOf('top', 'bottom'),
+    type: PropTypes.oneOf(['top', 'bottom']),
   };
 
   static defaultProps = {
     type: 'top',
-  }
+  };
 
   state = {
     marginDir: 0,
@@ -41,7 +43,6 @@ export default class HeadComponent extends PureComponent {
     this.context.headroom.removeSubscriber(this.onScroll);
   }
 
-
   // this function will be trigger by onScroll in ScrollableComponent (publisher).
   onScroll = (event) => {
     // console.log(event);
@@ -61,10 +62,7 @@ export default class HeadComponent extends PureComponent {
     if (currentOffset > this._state.offset) {
       // down, means hide.
       this.setState({
-        marginDir: Math.max(
-          -this._state.height,
-          this.state.marginDir - abs,
-        ),
+        marginDir: Math.max(-this._state.height, this.state.marginDir - abs),
       });
     } else if (currentOffset < this._state.offset) {
       // up, means show
@@ -79,16 +77,24 @@ export default class HeadComponent extends PureComponent {
   // get layout height, will add paddingTop to ScrollableComponent.
   handleUpdateViewHeight = (event) => {
     const { nativeEvent: { layout: { height } } } = event;
+    if (this._state.height !== height) {
+      this.context.headroom.substractHeight(this._state.height);
+      this.context.headroom.addHeight(height);
+    }
     this._state.height = height;
   };
 
   render() {
     const { type, style: pStyle = {}, ...rest } = this.props;
-    const style = type === 'top' ? { marginTop: this.state.marginDir } : { marginBottom: this.state.marginDir };
-    console.log(style);
+    const style =
+      type === 'top'
+        ? { marginTop: this.state.marginDir }
+        : { marginBottom: this.state.marginDir };
     return (
       <Animated.View style={[style, pStyle]} {...rest}>
-        <View onLayout={this.handleUpdateViewHeight}>{this.props.children}</View>
+        <View onLayout={this.handleUpdateViewHeight}>
+          {this.props.children}
+        </View>
       </Animated.View>
     );
   }

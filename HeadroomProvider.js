@@ -5,7 +5,6 @@ import { View } from 'react-native';
 export default class HeadroomProvider extends Component {
   state = {
     height: 0,
-    heightHide: 0,
   };
 
   static childContextTypes = {
@@ -17,6 +16,8 @@ export default class HeadroomProvider extends Component {
       headroom: {
         height: this.state.height,
         setHeight: this.setHeight,
+        addHeight: this.addHeight,
+        substractHeight: this.substractHeight,
 
         subscribers: this.subscribers,
         addSubscriber: this.addSubscriber,
@@ -36,6 +37,20 @@ export default class HeadroomProvider extends Component {
     this.setState({
       height,
     });
+    this.forceUpdate();
+  };
+
+  addHeight = (addHeight) => {
+    this.setState(({ height }) => ({
+      height: height + addHeight,
+    }));
+    this.forceUpdate();
+  };
+
+  substractHeight = (substractHeight) => {
+    this.setState(({ height }) => ({
+      height: height - substractHeight,
+    }));
     this.forceUpdate();
   };
 
