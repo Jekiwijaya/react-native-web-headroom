@@ -2,7 +2,7 @@
 
 Handling component that hide when scroll down, and showup when scroll up.
 
-![Headroom demo](demo/react-native-headroom.gif)
+![Headroom demo](docs/demo/react-native-headroom.gif)
 
 ## Instalation
 ````bash
