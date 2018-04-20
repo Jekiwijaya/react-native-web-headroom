@@ -22,8 +22,7 @@ module.exports = (storybookBaseConfig, configType) => {
 
   storybookBaseConfig.resolve.alias = {
     'react-native': 'react-native-web',
-    react$: path.resolve(__dirname, '../node_modules', 'react'),
-    'react-native-web-headroom': path.join(__dirname, '../../../'),
+    'react-native-web-headroom': path.join(__dirname, '../../'),
   };
 
   return storybookBaseConfig;
