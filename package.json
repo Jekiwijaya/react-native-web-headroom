@@ -16,19 +16,32 @@
     "react",
     "react-native"
   ],
-  "author": "Jacky Wijaya <jekiwijaya@hotmail.com>",
+  "author": {
+    "name": "Jacky Wijaya",
+    "email": "jekiwijaya@hotmail.com",
+    "url": "https://github.com/jekiwijaya"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Jekiwijaya/react-native-web-headroom/issues"
   },
+  "babel": {
+    "presets": [
+      "react-native"
+    ]
+  },
   "peerDependencies": {
-    "react": "*",
-    "react-native": "*"
+    "react-native-web": "*"
   },
   "homepage": "https://github.com/Jekiwijaya/react-native-web-headroom#readme",
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
     "babel-preset-react-native": "^4.0.0",
-    "react": "^16.2.0",
-    "react-native": "^0.54.4"
+    "prettier": "^1.7.3",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-native-web": "^0.1.1",
+    "webpack": "^3.6.0"
   }
 }

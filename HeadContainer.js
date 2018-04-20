@@ -19,9 +19,9 @@ export default class HeadContainer extends PureComponent {
 
   // get layout height, will add paddingTop to ScrollableComponent.
   handleUpdateViewHeight = (event) => {
-    if (this.init) return;
-    this.init = true;
     const { nativeEvent: { layout: { height } } } = event;
+    if (this.init && height < this.context.headroom.height) return;
+    this.init = true;
     this.context.headroom.setHeight(height);
   };
 

@@ -13,6 +13,7 @@ import { View, Animated } from 'react-native';
 export default class HeadComponent extends PureComponent {
   static contextTypes = {
     headroom: PropTypes.any.isRequired,
+    headroomInit: PropTypes.bool.isRequired,
 
     type: PropTypes.oneOf(['top', 'bottom']),
   };
@@ -77,10 +78,6 @@ export default class HeadComponent extends PureComponent {
   // get layout height, will add paddingTop to ScrollableComponent.
   handleUpdateViewHeight = (event) => {
     const { nativeEvent: { layout: { height } } } = event;
-    if (this._state.height !== height) {
-      this.context.headroom.substractHeight(this._state.height);
-      this.context.headroom.addHeight(height);
-    }
     this._state.height = height;
   };
 
