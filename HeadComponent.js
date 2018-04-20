@@ -13,7 +13,6 @@ import { View, Animated } from 'react-native';
 export default class HeadComponent extends PureComponent {
   static contextTypes = {
     headroom: PropTypes.any.isRequired,
-    headroomInit: PropTypes.bool.isRequired,
 
     type: PropTypes.oneOf(['top', 'bottom']),
   };
