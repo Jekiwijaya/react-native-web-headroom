@@ -1,12 +1,21 @@
 import React from 'react';
 import { ScrollView, StyleSheet, Text, View, StatusBar } from 'react-native';
 
-import Header from './components/Header';
 import {HeadContainer, HeadComponent, FootComponent, ScrollableComponent, HeadroomProvider} from 'react-native-web-headroom';
 
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
+
+class Header extends React.Component {
+
+  render() {
+    const { backgroundColor, ...rest } = this.props;
+    return (
+      <View style={{height: 30, backgroundColor, borderWidth: 1, borderColor: '#333'}} {...rest}/>
+    )
+  }
+}
 class Basic extends React.Component {
   render() {
     return (
